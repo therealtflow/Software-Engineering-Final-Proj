@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+ <!-- TODO -->
+  <!-- Add in a name section that matches the corresponding variable in the .py files to each input section-->
+  <!-- If the input does not exist for a certain variable, in this file create a new one -->
+  <!-- EXAMPLE in Profile_Create.html-->
+
+
+{% block body %}
+    <div class="divider">
+        <h1 style="color:white">Ready to upload your own project?</h1>
+        <h1 style="color:white">Let's get started!</h1>
+    </div>
+    <form action = "/upload" method="post" style="margin:50px; font-size:large">
+        <div class="form-group">
+            <label for="inputProjectName">What is the name of your project?</label>
+            <input name ="new_name" type="text" class="form-control" id="inputProjectName" aria-describedby="nameHelp" placeholder="Project Name">
+            <small id="nameHelp" class="form-text text-muted">This cannot be changed later.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="inputProjectDesc">Project Description:</label>
+            <textarea name ="new_description" class="form-control" id="inputProjectDesc" rows="4" placeholder="This project is about..."></textarea>
+            <small id="descHelp" class="form-text text-muted">Make sure to include information such as the project's purpose, how far into production it is, and what collaborators can expect to do.</small>
+        </div>
+        <div class="form-group">
+            <label for="inputProjectDesc">Main Language Used:</label>
+            <textarea name ="new_tag" class="form-control" id="inputProjectDesc" rows="1" placeholder=""></textarea>
+            <small id="descHelp" class="form-text text-muted">Make sure you submit an actual programming language</small>
+        </div>
+        <div class="form-group">
+            <label for="inputProjectCode">Code *Required:</label>
+            <textarea name ="new_code" class="form-control" id="inputProjectCode" rows="6"></textarea>
+            <small id="codeHelp" class="form-text text-muted">Use this space to specifically point out areas of code where you're struggling/where collaborators will be working. Your code will automatically be formatted using Markdown in the post.</small>
+        </div>
+        <div class="form-group">
+            <label for="inputProjectLink">Attach a collaboration link (Github, Google Docs, etc):</label>
+            <input name ="new_link" type="text" class="form-control" id="inputProjectLink" aria-describedby="linkHelp" placeholder="Link">
+            <small id="linkHelp" class="form-text text-muted">Make sure your link is public and accessible to potential collaborators.</small>
+        </div>
+
+        </div>
+        <!-- <div class="form-group">
+             <label for="inputProjectLink">Type in your username to show who created this project</label>
+            <input name ="CreatedBy" type="text" class="form-control" id="inputProjectLink" aria-describedby="linkHelp" placeholder="Username">
+            <small id="linkHelp" class="form-text text-muted">Make sure you type your username correctly so that people can find your profile!</small>
+        </div> -->
+
+        <button type="submit" class="btn btn-dark btn-lg" style="margin:20px">Upload Project</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+    <a class="nav-link" href="{{ url_for('feed') }}">My Feed </a>
+    <a class="nav-link" href="{{ url_for('upload') }}">Upload a Project </a>
+    <a class="nav-link" href="{{ url_for('logout') }}"> Logout </a>
+
+{% block body %}
+
+  <div class="divider">
+    <h1 style="color:white">{{ account.Username }}</h1>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><b>Username:</b> @{{ account.Username }}</li>
+    <li class="list-group-item"><b>Email:</b> {{ account.Email }}</li>
+    <li class="list-group-item"><b>About Me:</b> {{ account.AboutMe }}</li>
+  </ul>
+
+  <p style="font-size: 40px; margin: 20px;">
+  </p>
+
+{% for post in posts %}
+
+  <template class="card">
+    <div class="card-body">
+        
+      <h5 class="card-title">{{post.Name}} <span class="badge bg-secondary">{{post.tag}}</span> <span class="badge bg-secondary" style="background-color: blueviolet;"></span></h5>
+      <userName style="font-family: 'Courier New', Courier, monospace;">
+        @{{account.Username}}
+      </userName>
+      <p class="card-text">{{post.Description}}</p>
+      <a href="#" class="btn btn-light" style="background-color: blueviolet; color: white;">See full Post</a>
+    </div>
+  </template>
+
+  <div class="card">
+    <div class="card-body">
+        
+      <h5 class="card-title">{{post.Name}}<span class="badge bg-secondary">{{post.tag}}</span> <span class="badge bg-secondary" style="background-color: blueviolet;"></span></h5>
+      <userName style="font-family: 'Courier New', Courier, monospace;">
+        @{{account.Username}}
+      </userName>
+      <p class="card-text">{{post.Description}}</p>
+      <a href="/Post/{{post.post_id}}" class="btn btn-light" style="background-color: blueviolet; color: white;">See full Post</a> 
+    </div>
+  </div>
+
+  {% endfor %}
+
+    <div class="button-container" style="display: flex;">
+      <form action = "/logout" >
+        <button type = "submit" class = "btn btn-danger" style = "margin-top: 10px; margin-left: 20px;">Logout</button>
+      </form>
+      <form action = "/delete_acct">
+        <button type = "submit" class = "btn btn-danger" style = "margin-top: 10px; margin-left: 10px;">Delete Account</button>
+      </form>
+    </div>
+
+{% endblock %}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile/Account Page</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+  </style>
+   <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js"></script>  
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+</head>
+
+
+<!--Add Bootstrap content here and in the CSS file-->
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" style = "font-family: Arial, sans-serif; font-style: italic;" href="#">LOOP</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">My Feed</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Upload a Project</a>
+        </li>
+        <li class="nav-item dropdown" class = "nav-item active">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Profile
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="Account_page.html">Profile </a>
+            <a class="dropdown-item" href="#">Logout </a>
+            <a class="dropdown-item" href="#">Switch Account</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <h1></h1>
+  <h2></h2>
+  
+
+  <script type="module">
+
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyCskM9LOUxh2u6n0VHUm5OcoOQ-3vqcC8c",
+      authDomain: "loop-5d015.firebaseapp.com",
+      projectId: "loop-5d015",
+      storageBucket: "loop-5d015.appspot.com",
+      messagingSenderId: "289520327252",
+      appId: "1:289520327252:web:c6b786967f08ca3c6b6bc1",
+      measurementId: "G-Y1NC3DPKYN"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const auth = getAuth(app);
+    const analytics = getAnalytics(app);
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+<footer>
+</footer>

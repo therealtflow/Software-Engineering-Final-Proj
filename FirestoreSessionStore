@@ -1,0 +1,4 @@
+import flask_session
+from google.cloud import firestore
+
+class FirestoreSession

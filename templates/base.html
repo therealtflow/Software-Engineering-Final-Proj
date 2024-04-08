@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LOOP</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <!-- and it's easy to individually load additional languages -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+        <script>hljs.highlightAll();</script>
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+                <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        {% block head %}{% endblock %}
+    </head>
+    <body>
+        <script type="module">
+            const firebaseConfig = {
+              apiKey: "AIzaSyCskM9LOUxh2u6n0VHUm5OcoOQ-3vqcC8c",
+              authDomain: "loop-5d015.firebaseapp.com",
+              projectId: "loop-5d015",
+              storageBucket: "loop-5d015.appspot.com",
+              messagingSenderId: "289520327252",
+              appId: "1:289520327252:web:c6b786967f08ca3c6b6bc1",
+              measurementId: "G-Y1NC3DPKYN"
+            };
+            const app = initializeApp(firebaseConfig);
+            const db = getFirestore(app);
+            const auth = getAuth(app);
+            const analytics = getAnalytics(app);
+        </script>
+        <script src="app.js"></script>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #242424; font-style: italic;">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="{{ url_for('index') }}"><i>LOOP</i></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="d-flex justify-content-end">
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link" href="{{ url_for('feed') }}">My Feed </a>
+                  <a class="nav-link" href="{{ url_for('upload') }}">Upload a Project </a>
+                  <a class="nav-link" href="{{ url_for('home_acct') }}">My Profile</a>
+                </div>
+              </div>
+              </div>
+            </div>
+          </nav>  
+        {% block body %}{% endblock %}
+        <footer>Logic and Object-Oriented Post (LOOP) 2023</footer>
+    </body>
+</html>

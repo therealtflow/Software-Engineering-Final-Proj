@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+    <div class="divider">
+        <h1 style="color:white">Welcome to <i>LOOP</i>!</h1>
+        <h1 style="color:white">Let's get you in the loop with</h1>
+        <h1 style="color:white">new and exciting software projects</h1>
+        <a class="btn btn-light btn-lg" href="{{ url_for('create_acct') }}" style="margin-right: 70px; margin-left: 10px;">Sign Up</a>
+        <a class="btn btn-light btn-lg" href="{{ url_for('login') }}" action="/create_profile" style="margin-right: 70px; margin-left: 10px;">Login</a>
+    </div>
+
+    <div class="container">
+        <div class="jumbotron">
+          <h1 style="color: blueviolet;">Welcome to <i>LOOP</i></h1>
+          <p>The ultimate destination for all Students, Coders and Developers!</p>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <h2>About</h2>
+            <p><i>LOOP</i> is a unique application/website that features a feed of posts focused on coding, software, and computer science. Our platform serves as a hub for all the latest updates, tips, and tricks in the world of technology and Object-Oriented Coding.</p>
+          </div>
+          <div class="col-md-6">
+            <!--<img src="loop_logo.png" alt="LOOP logo" class="img-fluid"> -->
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Interactive Platform</h2>
+            <p>Our platform allows users to share their knowledge, insights, and experiences with their fellow peers. Each post is carefully curated and reviewed to provide our users with the most relevant and informative content.</p>
+          </div>
+          <div class="col-md-6">
+            <h2>Comments</h2>
+                <p>In addition to our informative posts, our website also features a comments section where users can engage in discussions, ask questions, and share their thoughts on various topics. Connect with like-minded individuals and expand your knowledge with <i>LOOP</i>.</p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-12">
+               <h2>Join the Community</h2>
+               <p>At <i>LOOP</i>, we believe in the power of community and strive to provide a platform that fosters learning and growth for all computer science enthusiasts. Sign up now to stay in the <i>LOOP</i> and become a part of our community for an enriching experience in the world of coding, software, and computer science!</p>
+               <a href="{{ url_for('login') }}"class="btn btn-light" style="background-color: blueviolet; color: white;">Join LOOP</a> 
+          </div>
+        </div>
+{% endblock %}

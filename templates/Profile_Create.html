@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+<!-- Title, -->
+
+<div class="divider">
+  <h1 style="color:white">Sign Up!</h1>
+  <h1 style="color:white">Enter the following information:</h1>
+</div>
+  <form action="/create_profile " method="post">
+    <div style="margin: 20px;">
+      <div class ="Input_group">
+        <label for="basic-url" class="form-label">Enter your Username:</label>
+      <div class="input-group mb-3">
+        <span class="input-group-text">@</span>
+        <input name = "new_username" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+
+      <label for="basic-url" class="form-label">Enter your Password (Minimum of six characters):</label>
+      <div class="input-group mb-3">
+        <input name = "new_password" type="text" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2">
+      </div>
+                  
+      <label for="basic-url" class="form-label">Enter your Email:</label>
+      <div class="input-group mb-3">
+        <input name = "new_email" type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon2">
+      </div>
+                  
+
+                      
+      <label for="basic-url" class="form-label">Write a brief "About Me" to introduce yourself to collaborators:</label>
+      <div class="input-group">
+        <textarea name = "new_aboutme" class="form-control" placeholder="About Me" aria-label="About Me"></textarea>
+      </div>
+    </div>
+        <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-light" style="background-color: blueviolet; color: white; margin-bottom: 20px; margin-top: 20px;">Submit</button>
+        </div>
+  </form>
+{% endblock %}

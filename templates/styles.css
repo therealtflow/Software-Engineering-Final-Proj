@@ -1,0 +1,134 @@
+.post {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid gray;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Styling for the input form */
+  form {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid gray;
+    font-family: Arial, sans-serif;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  header {
+  background-color: rgb(37, 35, 38);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  background-size: cover;
+  }
+
+  h2
+  {
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: large;
+  }
+
+  .button {
+  display: inline-block;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-right: 10px;
+  align-items: center;
+  }
+
+  body {
+    margin-top: 20px;
+  }
+
+  .Input_group {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .card
+  {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    column-width: auto; 
+  }
+
+  .card-body
+  {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    column-width: auto; 
+  }
+
+
+  .badge bg-secondary
+  {
+    background-color: blueviolet;
+  }
+
+  img
+  {
+    margin: auto;
+    padding: 20px;
+    height: auto;
+  }
+
+  .comment-container {
+    width: 70%;
+    margin: 20px auto;
+  }
+  .comment {
+    margin-bottom: 10px;
+    border: 1px solid blueviolet;
+    padding: 10px;
+  }
+  .comment p {
+    margin: 0;
+  }
+  .comment-form {
+    width: 70%;
+    margin: 20px auto;
+  }
+  .comment-form h4 {
+    margin-bottom: 10px;
+  }
+  .comment-form input, .comment-form textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+  .comment-form button {
+    padding: 10px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+  .comment-form button:hover {
+    background-color: #3E8E41;
+  }
+  .comment-form input:focus, .comment-form textarea:focus {
+    outline: none;
+    border: 2px solid #4CAF50;
+  }
+
+
+
+
+  
